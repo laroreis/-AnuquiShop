@@ -34,6 +34,10 @@ public class Loja {
 	@JsonIgnoreProperties("loja")
 	private List<Produto> produto;
 	
+	@OneToMany(mappedBy = "loja", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("loja")
+	private List<Usuario> usuario;
+	
 	public long getIdLoja() {
 		return idLoja;
 	}
@@ -65,6 +69,15 @@ public class Loja {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
+
+	public List<Usuario> getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(List<Usuario> usuario) {
+		this.usuario = usuario;
+	}
 	
 	
-}
+	
+}//fim
